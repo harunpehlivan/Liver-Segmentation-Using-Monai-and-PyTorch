@@ -12,8 +12,7 @@ def dice_metric(predicted, target):
     to calculate a metric value for the training and the validation.
     '''
     dice_value = DiceLoss(to_onehot_y=True, sigmoid=True, squared_pred=True)
-    value = 1 - dice_value(predicted, target).item()
-    return value
+    return 1 - dice_value(predicted, target).item()
 
 def calculate_weights(val1, val2):
     '''
